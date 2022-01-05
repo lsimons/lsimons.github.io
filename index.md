@@ -1,37 +1,12 @@
-## Welcome to GitHub Pages
+# Leo's open source stuff
+Surely of limited interest.
 
-You can use the [editor on GitHub](https://github.com/lsimons/lsimons.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+# Selected repositories
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+* **[tlm](https://github.com/typelinkmodel/tlm)** - Type-Link-Model (TLM) is a simple modelling technique inspired by Object Role Modelling that is suitable for working with web APIs and the typical simple tree structures used in web documents.
 
-### Markdown
+* **[career model](https://github.com/lsimons/career-model)** - Career Model is an interactive career path planner.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+* **[log4j](https://github.com/lsimons/log4j)** - Fork of Log4J 1.2 with some security fixes
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lsimons/lsimons.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<sub><sup>[edit](https://github.com/lsimons/lsimons.github.io/edit/main/index.md)</sup></sub>
