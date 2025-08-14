@@ -1,4 +1,3 @@
-# Leo's open source stuff
 
 * **[Caseum](https://lsimons.github.io/caseum/)** - is a simple approach to software architecture that combines multiple views to boost understanding and empathy across roles.
 
