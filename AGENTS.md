@@ -27,7 +27,7 @@ their own).
   otherwise hide it since there is no sidebar/mobile menu).
 - The favicon (`docs/public/favicon.png` + `apple-touch-icon.png`) is generated
   from `docs/src/assets/profile.png` with `sips` (see README).
-- `mise.toml` - pinned tools (bun, prek, lychee, gitleaks) and tasks:
+- `.mise.toml` - pinned tools (bun, prek, lychee, gitleaks) and tasks:
   `mise run docs-install`, `docs-dev`, `docs-build`, `docs-check`. Run
   `mise install` first.
   `mise run docs-repos` re-scans GitHub (needs authenticated `gh`) and rewrites
