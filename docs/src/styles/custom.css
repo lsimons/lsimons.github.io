@@ -1,11 +1,17 @@
-/* Tighten the splash landing page so the project cards fit above the fold:
-   trim the tall vertical padding Starlight puts around the hero. */
+/* Tighten the splash landing page so the project cards fit above the fold. */
+
+/* Trim the tall vertical padding Starlight puts around the hero. */
 .hero {
-	padding-block: 1.5rem 0;
+	padding-block: 1rem 0;
 }
 
-/* The hero and the card grid are separate blocks with their own top margins;
-   pull the cards up closer to the tagline. */
+/* The default splash H1 is enormous (up to ~6rem); cap it so the tagline and
+   cards sit higher on the page. */
+.hero h1 {
+	font-size: clamp(2rem, 1.5rem + 4vw, 3rem);
+}
+
+/* Pull the card grid up closer to the tagline. */
 .hero + .sl-markdown-content {
 	margin-top: 1rem;
 }
