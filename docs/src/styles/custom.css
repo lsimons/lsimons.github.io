@@ -34,6 +34,21 @@
 	--sl-color-black: #faf1f3; /* page bg (snow) */
 }
 
+/* Fonts: Merriweather Sans for on-screen/UI (Starlight's global --sl-font, so
+   nav/header/cards/labels), Merriweather for long-form prose (the rendered
+   markdown body), and a system-first monospace stack for code. Font choice
+   doesn't vary by theme, so these live at :root and apply to both light and
+   dark (which only override colors). Webfonts loaded in astro.config.mjs's
+   `head`. */
+:root {
+	--sl-font: 'Merriweather Sans', sans-serif;
+	--sl-font-mono: ui-monospace, 'Cascadia Code', 'JetBrains Mono', 'SF Mono', Menlo, Consolas,
+		monospace;
+}
+.sl-markdown-content {
+	font-family: 'Merriweather', Georgia, serif;
+}
+
 /* This is a single splash landing page. The site title already appears in the
    header, so hide the duplicate page-title <h1> visually - but keep it in the
    DOM as the skip-link target and for accessibility/SEO. */
