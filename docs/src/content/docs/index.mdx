@@ -1,0 +1,43 @@
+---
+title: "Leo's open source stuff"
+description: Some of my pet projects.
+template: splash
+# The page title equals the site title, so the default "{title} | {site}"
+# tag reads as a duplicate; override the tag to just the title.
+head:
+  - tag: title
+    content: "Leo's open source stuff"
+hero:
+  tagline: Some of my pet projects.
+  actions:
+    - text: View on GitHub
+      link: https://github.com/lsimons
+      icon: external
+      variant: primary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+	<Card title="Agent Engineer" icon="open-book">
+		A course for software engineers on the fundamentals of AI agents and how
+		to build them with Claude.
+
+		[Read the course](https://lsimons.github.io/agent-engineer-course/)
+	</Card>
+	<Card title="Caseum" icon="puzzle">
+		A simple approach to software architecture that combines multiple views to
+		boost understanding and empathy across roles.
+
+		[Explore Caseum](https://lsimons.github.io/caseum/)
+	</Card>
+	<Card title="tlm" icon="seti:json">
+		Type-Link-Model (TLM) is a simple modelling technique inspired by Object
+		Role Modelling, suitable for working with web APIs and the typical simple
+		tree structures used in web documents.
+
+		[View on GitHub](https://github.com/typelinkmodel/tlm)
+	</Card>
+</CardGrid>
+
+<sub><sup>[edit this page](https://github.com/lsimons/lsimons.github.io/edit/main/docs/src/content/docs/index.mdx)</sup></sub>
