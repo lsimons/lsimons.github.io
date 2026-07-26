@@ -1,23 +1,30 @@
-/* Tighten the splash landing page so the project cards fit above the fold. */
-
-/* Trim the tall vertical padding Starlight puts around the hero. */
-.hero {
-	padding-block: 1rem 0;
+/* This is a single splash landing page. The site title already appears in the
+   header, so hide the duplicate page-title <h1> visually - but keep it in the
+   DOM as the skip-link target and for accessibility/SEO. */
+h1#_top {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }
 
-/* The default splash H1 is enormous (up to ~6rem); cap it so the tagline and
-   cards sit higher on the page. */
-.hero h1 {
-	font-size: clamp(2rem, 1.5rem + 4vw, 3rem);
+/* The splash page splits into content panels separated by top borders. The
+   first panel now holds only the hidden title; collapse it and drop the
+   dividers so there's no empty panel or stray line under the header. */
+.content-panel {
+	border-top: none;
+}
+.content-panel:first-of-type {
+	padding-block: 0;
 }
 
-/* Pull the card grid up closer to the tagline. */
-.hero + .sl-markdown-content {
-	margin-top: 1rem;
-}
-
-/* Small, unobtrusive circular profile picture floated beside the intro,
-   so the text wraps around it (LinkedIn/GitHub style, but compact). */
+/* Small, unobtrusive circular profile picture floated beside the intro, so the
+   text wraps around it (LinkedIn/GitHub style, but compact). */
 .profile-avatar {
 	float: right;
 	width: 7rem;
