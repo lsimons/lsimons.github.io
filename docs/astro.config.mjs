@@ -12,7 +12,19 @@ export default defineConfig({
 		starlight({
 			title: "Leo's open source stuff",
 			description: 'Some of my pet projects.',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/lsimons' }],
+			// Favicon generated from my profile picture (see docs/public/).
+			favicon: '/favicon.png',
+			head: [
+				{
+					tag: 'link',
+					attrs: { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+				},
+			],
+			// Header menu mirroring https://leosimons.com (Home/Blog/GitHub/LinkedIn),
+			// rendered in place of Starlight's social icons.
+			components: {
+				SocialIcons: './src/components/Nav.astro',
+			},
 			// A single landing page; hide the (empty) sidebar and table of contents.
 			pagination: false,
 			// One static page - no search box needed.
