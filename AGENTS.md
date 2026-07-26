@@ -41,4 +41,7 @@ their own).
   The Pages source must be "GitHub Actions" (not "Deploy from a branch").
 - Dependabot is active (bun + actions, weekly); typescript is held to 6.x
   (@astrojs/check needs ^5||^6) - keep the ignore rule.
-- Verify changes with `just docs-build`.
+- Verify changes with `just docs-build`. To eyeball the layout, run
+  `just docs-browser` once (installs Playwright's Chromium), then
+  `just docs-screenshot out.png` builds, serves, and captures the landing
+  page at 1280x800.

@@ -23,3 +23,16 @@ docs-check:
 # Docs: clean build artifacts
 docs-clean:
     rm -rf docs/dist docs/.astro
+
+# Docs: install the Chromium browser Playwright uses for screenshots
+docs-browser:
+    cd docs && bunx playwright install chromium
+
+# Docs: build, serve, and screenshot the landing page to the given file
+# (default out.png). Requires `just docs-browser` once.
+docs-screenshot out="out.png":
+    cd docs && bun run build
+    cd docs && bun run preview --port 4321 > /tmp/astro-preview.log 2>&1 & \
+      sleep 4 && \
+      bunx playwright screenshot --viewport-size=1280,800 http://localhost:4321/ "{{out}}"; \
+      status=$?; pkill -f "astro preview" || true; exit $status
