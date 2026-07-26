@@ -7,8 +7,6 @@ template: splash
 head:
   - tag: title
     content: "Leo's open source stuff"
-hero:
-  tagline: Some of my pet projects.
 ---
 
 import { Image } from 'astro:assets';
@@ -24,6 +22,12 @@ import repos from '../../data/repos.json';
 ## Featured
 
 <CardGrid>
+	<Card title="Caseum" icon="puzzle">
+		A simple approach to software architecture that combines multiple views to
+		boost understanding and empathy across roles.
+
+		[Explore Caseum](https://lsimons.github.io/caseum/)
+	</Card>
 	<Card title="Agent Engineer" icon="open-book">
 		A course for software engineers on the fundamentals of AI agents and how
 		to build them with Claude.
@@ -41,8 +45,7 @@ import repos from '../../data/repos.json';
 
 ## Repositories
 
-My public projects on [GitHub](https://github.com/lsimons) (refresh with
-`just docs-repos`):
+My public projects on [GitHub](https://github.com/lsimons):
 
 <ul>
 	{repos.map((repo) => (
