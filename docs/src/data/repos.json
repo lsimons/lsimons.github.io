@@ -25,6 +25,11 @@
 		"url": "https://github.com/lsimons/lsimons-llm"
 	},
 	{
+		"name": "lsimons-template-doc",
+		"description": "Project template for documentation sites with Astro Starlight, Quarto slide decks, and GitHub Pages",
+		"url": "https://github.com/lsimons/lsimons-template-doc"
+	},
+	{
 		"name": "lsimons-template-go",
 		"description": "Generic Go CLI template repository for my personal projects",
 		"url": "https://github.com/lsimons/lsimons-template-go"
