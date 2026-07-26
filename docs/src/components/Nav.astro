@@ -1,0 +1,31 @@
+---
+// Header navigation, mirroring the menu on https://leosimons.com.
+// Overrides Starlight's SocialIcons slot (see astro.config.mjs).
+const items = [
+	{ label: 'Home', href: 'https://lsimons.wordpress.com' },
+	{ label: 'Blog', href: 'https://leosimons.com/blog/' },
+	{ label: 'GitHub', href: 'https://lsimons.github.io' },
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/lsimons/' },
+];
+---
+
+<nav class="top-nav" aria-label="Site">
+	{items.map((item) => <a href={item.href}>{item.label}</a>)}
+</nav>
+
+<style>
+	.top-nav {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+	}
+	.top-nav a {
+		color: var(--sl-color-text);
+		text-decoration: none;
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+	}
+	.top-nav a:hover {
+		color: var(--sl-color-text-accent);
+	}
+</style>

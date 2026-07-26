@@ -1,11 +1,13 @@
 #!/usr/bin/env bun
-// Refresh the data the landing page renders from GitHub, via the `gh` CLI:
-//   - src/data/repos.json : my public, non-fork, non-archived repositories
-//     (alphabetical, with their GitHub description)
-//   - src/intro.md        : my profile README (github.com/lsimons/lsimons)
+// Refresh src/data/repos.json - my public, non-fork, non-archived
+// repositories (alphabetical, with their GitHub description) - from GitHub via
+// the `gh` CLI.
 //
 // Run with `just docs-repos`. Requires an authenticated `gh` (`gh auth status`).
-// The output files are committed so the site build stays hermetic (no network).
+// The output is committed so the site build stays hermetic (no network).
+//
+// Note: src/intro.md was seeded from my profile README but is now hand-curated,
+// so it is intentionally NOT regenerated here.
 
 import { execFileSync } from 'node:child_process';
 import { writeFileSync, mkdirSync } from 'node:fs';
@@ -44,8 +46,3 @@ const repos = raw
 mkdirSync(join(srcDir, 'data'), { recursive: true });
 writeFileSync(join(srcDir, 'data', 'repos.json'), JSON.stringify(repos, null, '\t') + '\n');
 console.log(`Wrote src/data/repos.json (${repos.length} repositories)`);
-
-// --- intro (profile README) -------------------------------------------------
-const readme = gh(['api', 'repos/lsimons/lsimons/readme', '-H', 'Accept: application/vnd.github.raw']);
-writeFileSync(join(srcDir, 'intro.md'), readme.trimEnd() + '\n');
-console.log('Wrote src/intro.md (from github.com/lsimons/lsimons)');
