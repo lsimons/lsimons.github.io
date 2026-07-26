@@ -3,7 +3,7 @@
 // repositories (alphabetical, with their GitHub description) - from GitHub via
 // the `gh` CLI.
 //
-// Run with `just docs-repos`. Requires an authenticated `gh` (`gh auth status`).
+// Run with `mise run docs-repos`. Requires an authenticated `gh` (`gh auth status`).
 // The output is committed so the site build stays hermetic (no network).
 //
 // Note: src/intro.md was seeded from my profile README but is now hand-curated,

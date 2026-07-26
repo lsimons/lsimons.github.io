@@ -6,13 +6,13 @@ source pet projects, built with [Astro Starlight](https://starlight.astro.build/
 ## Develop
 
 Tools are pinned with [mise](https://mise.jdx.dev/); tasks run through
-[just](https://just.systems/).
+[mise](https://mise.jdx.dev/tasks/).
 
 ```sh
-mise install        # install bun, just, prek, lychee, gitleaks
-just docs-install   # bun install
-just docs-dev       # dev server at http://localhost:4321/
-just docs-build     # static build into docs/dist
+mise install            # install bun, prek, lychee, gitleaks
+mise run docs-install   # bun install
+mise run docs-dev       # dev server at http://localhost:4321/
+mise run docs-build     # static build into docs/dist
 ```
 
 ## Publish
@@ -25,6 +25,6 @@ The Pages source must be set to "GitHub Actions" in the repository settings.
 
 - `docs/` - the Astro Starlight site. Landing page:
   `docs/src/content/docs/index.mdx`.
-- `mise.toml` - pinned tools. `justfile` - dev/build tasks.
+- `mise.toml` - pinned tools and dev/build tasks (run with `mise run <task>`).
 - `.github/workflows/` - `ci.yml` (build + check on PRs) and `deploy.yml`
   (publish on push to main).
