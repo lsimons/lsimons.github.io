@@ -1,14 +1,24 @@
 # Lychee link checker configuration
 # https://lychee.cli.rs/usage/config/
 
+# Root-relative internal links resolve against our published site, so they land
+# under the excluded lsimons.github.io domain below. The Astro build validates
+# them for real. This is the root user site, so the base is the domain root.
+base_url = "https://lsimons.github.io/"
+
+# 429 (rate limited) and 403 (bot-protected) are not broken links; accept them
+# so the pre-commit hook does not flake on external hosts.
+accept = ["100..=299", "403", "429"]
+
 # - Our own published URL: the deploy workflow proves it, and checking it is a
-#   chicken-and-egg problem on the first deploy.
+#   chicken-and-egg problem on the first deploy (and internal links resolve
+#   against it, see base_url above).
 # - localhost: the dev-server URL referenced in docs is not reachable in CI.
 # - schubergphilis.com: bot-protected, returns 403 to link checkers.
-# - `[{}]`: JSX expressions in .mdx (e.g. `href={repo.url}`) that lychee
+# - `[{}]` / `%7B`: JSX expressions in .mdx (e.g. `href={repo.url}`) that lychee
 #   mis-parses as literal URLs.
 exclude = [
-  '^https://lsimons\.github\.io/',
+  '^https?://lsimons\.github\.io/',
   '^http://localhost',
   '^https://schubergphilis\.com',
   '[{}]',

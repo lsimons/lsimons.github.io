@@ -25,6 +25,6 @@ The Pages source must be set to "GitHub Actions" in the repository settings.
 
 - `docs/` - the Astro Starlight site. Landing page:
   `docs/src/content/docs/index.mdx`.
-- `mise.toml` - pinned tools and dev/build tasks (run with `mise run <task>`).
+- `.mise.toml` - pinned tools and dev/build tasks (run with `mise run <task>`).
 - `.github/workflows/` - `ci.yml` (build + check on PRs) and `deploy.yml`
   (publish on push to main).
