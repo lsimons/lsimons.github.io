@@ -4,4 +4,13 @@
 # - Our own published URL: the deploy workflow proves it, and checking it is a
 #   chicken-and-egg problem on the first deploy.
 # - localhost: the dev-server URL referenced in docs is not reachable in CI.
-exclude = ['^https://lsimons\.github\.io/', '^http://localhost']
+# - schubergphilis.com: bot-protected, returns 403 to link checkers.
+# - `[{}]`: JSX expressions in .mdx (e.g. `href={repo.url}`) that lychee
+#   mis-parses as literal URLs.
+exclude = [
+  '^https://lsimons\.github\.io/',
+  '^http://localhost',
+  '^https://schubergphilis\.com',
+  '[{}]',
+  '%7[BD]',
+]
