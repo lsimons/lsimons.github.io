@@ -11,9 +11,13 @@ hero:
   tagline: Some of my pet projects.
 ---
 
+import { Image } from 'astro:assets';
 import { Card, CardGrid } from '@astrojs/starlight/components';
 import { Content as Intro } from '../../intro.md';
+import profile from '../../assets/profile.png';
 import repos from '../../data/repos.json';
+
+<Image src={profile} alt="Leo Simons" width={112} height={112} class="profile-avatar" />
 
 <Intro />
 
