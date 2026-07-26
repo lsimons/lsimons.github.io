@@ -12,6 +12,12 @@ hero:
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Content as Intro } from '../../intro.md';
+import repos from '../../data/repos.json';
+
+<Intro />
+
+## Featured
 
 <CardGrid>
 	<Card title="Agent Engineer" icon="open-book">
@@ -20,20 +26,34 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 		[Read the course](https://lsimons.github.io/agent-engineer-course/)
 	</Card>
-	<Card title="Caseum" icon="puzzle">
-		A simple approach to software architecture that combines multiple views to
-		boost understanding and empathy across roles.
-
-		[Explore Caseum](https://lsimons.github.io/caseum/)
-	</Card>
 	<Card title="tlm (retired)" icon="seti:json">
 		Type-Link-Model (TLM) was a simple modelling technique inspired by Object
-		Role Modelling, suitable for working with web APIs and the typical simple
-		tree structures used in web documents. It is now archived - for
-		fact-based modelling, use [LinkML](https://linkml.io/) instead.
+		Role Modelling. It is now archived - for fact-based modelling, use
+		[LinkML](https://linkml.io/) instead.
 
 		[Read the retirement notice](https://typelinkmodel.github.io/)
 	</Card>
 </CardGrid>
+
+## Repositories
+
+My public projects on [GitHub](https://github.com/lsimons) (refresh with
+`just docs-repos`):
+
+<ul>
+	{repos.map((repo) => (
+		<li>
+			<a href={repo.url}><strong>{repo.name}</strong></a>
+			{repo.description ? ` - ${repo.description}` : ''}
+		</li>
+	))}
+</ul>
+
+## Also worth a look
+
+- [LAB271](https://github.com/LAB271) - some open source code from my team, the
+	innovation space of Schuberg Philis.
+- [Schuberg Philis](https://github.com/schubergphilis) - some open source code
+	from my company.
 
 <sub><sup>[edit this page](https://github.com/lsimons/lsimons.github.io/edit/main/docs/src/content/docs/index.mdx)</sup></sub>

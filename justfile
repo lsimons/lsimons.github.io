@@ -20,6 +20,10 @@ docs-install:
 docs-check:
     cd docs && bunx astro check
 
+# Docs: refresh the repository list and intro from GitHub (needs `gh` auth)
+docs-repos:
+    cd docs && bun run scripts/refresh-repos.mjs
+
 # Docs: clean build artifacts
 docs-clean:
     rm -rf docs/dist docs/.astro

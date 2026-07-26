@@ -3,6 +3,8 @@
     "MD013": false,
     "MD024": false,
     "MD033": false,
+    // intro.md is an imported partial, not a standalone page - no leading H1.
+    "MD041": false,
     "MD026": false,
     "MD028": false,
     "MD036": false,

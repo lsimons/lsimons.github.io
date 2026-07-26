@@ -1,0 +1,52 @@
+[
+	{
+		"name": "caseum",
+		"description": "Caseum software architecture method",
+		"url": "https://github.com/lsimons/caseum"
+	},
+	{
+		"name": "lsimons-agent",
+		"description": "Custom coding agent just for lsimons and lsimons-bot",
+		"url": "https://github.com/lsimons/lsimons-agent"
+	},
+	{
+		"name": "lsimons-bot",
+		"description": "Slack Bot that automates part of Leo Simons' (lsimons) work at Schuberg Philis",
+		"url": "https://github.com/lsimons/lsimons-bot"
+	},
+	{
+		"name": "lsimons-dotfiles",
+		"description": "Homedir setup for @lsimons (and @lsimons-bot)",
+		"url": "https://github.com/lsimons/lsimons-dotfiles"
+	},
+	{
+		"name": "lsimons-llm",
+		"description": "Python LLM client",
+		"url": "https://github.com/lsimons/lsimons-llm"
+	},
+	{
+		"name": "lsimons-template-go",
+		"description": "Generic Go CLI template repository for my personal projects",
+		"url": "https://github.com/lsimons/lsimons-template-go"
+	},
+	{
+		"name": "lsimons-template-mono",
+		"description": "Project template for polyglot monorepo (Python + TypeScript + Go + Rust) with mise",
+		"url": "https://github.com/lsimons/lsimons-template-mono"
+	},
+	{
+		"name": "lsimons-template-py",
+		"description": "Generic template repository for my personal projects",
+		"url": "https://github.com/lsimons/lsimons-template-py"
+	},
+	{
+		"name": "lsimons-template-rs",
+		"description": "Project template for Rust CLI + library projects with clap, strict clippy, and assert_cmd tests",
+		"url": "https://github.com/lsimons/lsimons-template-rs"
+	},
+	{
+		"name": "lsimons-template-ts",
+		"description": "Project template for TypeScript/JavaScript projects with Biome, Vitest, and native Node TS support",
+		"url": "https://github.com/lsimons/lsimons-template-ts"
+	}
+]
