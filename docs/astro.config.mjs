@@ -15,6 +15,9 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/lsimons' }],
 			// A single landing page; hide the (empty) sidebar and table of contents.
 			pagination: false,
+			// One static page - no search box needed.
+			pagefind: false,
+			customCss: ['./src/styles/custom.css'],
 		}),
 	],
 });
