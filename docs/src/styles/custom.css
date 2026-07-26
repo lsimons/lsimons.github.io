@@ -49,6 +49,13 @@
 	font-family: 'Merriweather', Georgia, serif;
 }
 
+/* Keep the main content column white in light mode so images with white
+   backgrounds blend in; the header keeps the off-white LSD Warm surface. Dark
+   mode keeps its warm-dark content background. */
+:root[data-theme='light'] .main-pane {
+	background-color: #ffffff;
+}
+
 /* This is a single splash landing page. The site title already appears in the
    header, so hide the duplicate page-title <h1> visually - but keep it in the
    DOM as the skip-link target and for accessibility/SEO. */
