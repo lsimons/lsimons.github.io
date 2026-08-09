@@ -46,7 +46,7 @@
 	},
 	{
 		"name": "mdd-wrapper",
-		"description": "Reference wrapper for mdd: a GitHub mirror backend behind the MirrorBackend seam.",
+		"description": "Reference wrapper for MDD: a GitHub mirror backend behind the MirrorBackend seam.",
 		"url": "https://github.com/lsimons/mdd-wrapper"
 	}
 ]
