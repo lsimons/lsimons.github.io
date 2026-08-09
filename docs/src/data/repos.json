@@ -5,28 +5,18 @@
 		"url": "https://github.com/lsimons/caseum"
 	},
 	{
-		"name": "lsimons-agent",
-		"description": "Custom coding agent just for lsimons and lsimons-bot",
-		"url": "https://github.com/lsimons/lsimons-agent"
-	},
-	{
-		"name": "lsimons-bot",
-		"description": "Slack Bot that automates part of Leo Simons' (lsimons) work at Schuberg Philis",
-		"url": "https://github.com/lsimons/lsimons-bot"
-	},
-	{
 		"name": "lsimons-dotfiles",
 		"description": "Homedir setup for @lsimons (and @lsimons-bot)",
 		"url": "https://github.com/lsimons/lsimons-dotfiles"
 	},
 	{
-		"name": "lsimons-llm",
-		"description": "Python LLM client",
-		"url": "https://github.com/lsimons/lsimons-llm"
+		"name": "lsimons-skills",
+		"description": "My agent skills, vendored and namespaced",
+		"url": "https://github.com/lsimons/lsimons-skills"
 	},
 	{
 		"name": "lsimons-template-doc",
-		"description": "Project template for documentation sites with Astro Starlight, Quarto slide decks, and GitHub Pages",
+		"description": "Template for documentation sites with Astro Starlight and Quarto",
 		"url": "https://github.com/lsimons/lsimons-template-doc"
 	},
 	{
@@ -53,5 +43,10 @@
 		"name": "lsimons-template-ts",
 		"description": "Project template for TypeScript/JavaScript projects with Biome, Vitest, and native Node TS support",
 		"url": "https://github.com/lsimons/lsimons-template-ts"
+	},
+	{
+		"name": "mdd-wrapper",
+		"description": "Reference wrapper for mdd: a GitHub mirror backend behind the MirrorBackend seam.",
+		"url": "https://github.com/lsimons/mdd-wrapper"
 	}
 ]
