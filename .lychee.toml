@@ -2,8 +2,16 @@
 # https://lychee.cli.rs/usage/config/
 
 # Root-relative internal links resolve against our published site, so they land
-# under the excluded lsimons.github.io domain below. The Astro build validates
-# them for real. This is the root user site, so the base is the domain root.
+# under the excluded lsimons.github.io domain below. This is the root user
+# site, so the base is the domain root.
+#
+# NOTE: nothing currently validates root-relative internal links. This comment
+# used to claim "the Astro build validates them for real"; it does not. Astro 7
+# ships no built-in link validation and `starlight-links-validator` is not
+# installed, so a link to a page that does not exist builds and deploys clean
+# (verified by adding one and building). There are no such links today — the
+# site is a single page — but adding one would go unchecked. Closing the gap
+# means adding the `starlight-links-validator` Starlight plugin.
 base_url = "https://lsimons.github.io/"
 
 # 429 (rate limited) and 403 (bot-protected) are not broken links; accept them

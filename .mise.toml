@@ -65,8 +65,11 @@ description = "Astro type/content check"
 dir = "docs"
 run = "bunx astro check"
 
+# Writes docs/src/data/repos.json only. It does NOT regenerate
+# docs/src/intro.md, which is hand-curated — the description used to claim it
+# did, and refresh-repos.mjs has never touched that file.
 [tasks.docs-repos]
-description = "Refresh the repository list and intro from GitHub (needs `gh` auth)"
+description = "Refresh docs/src/data/repos.json from GitHub (needs `gh` auth)"
 dir = "docs"
 run = "bun run scripts/refresh-repos.mjs"
 
