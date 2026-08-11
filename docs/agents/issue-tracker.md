@@ -1,31 +1,20 @@
-# Issue tracker: none — this repository has issues disabled
+# Issue tracker: GitHub
 
-**There is no issue tracker for this repository.** GitHub Issues are turned
-off:
+Issues for this project are managed as GitHub issues, in the same remote as the
+source code: <https://github.com/lsimons/lsimons.github.io/issues>.
+
+Use the `gh` CLI for all operations; `gh issue --help` covers it.
+
+Verified enabled rather than assumed — this repository had issues turned **off**
+until 2026-08-11, so the check is worth keeping:
 
 ```console
 $ gh api repos/lsimons/lsimons.github.io --jq .has_issues
-false
-$ gh issue list
-the 'lsimons/lsimons.github.io' repository has disabled issues
+true
 ```
 
-Projects, the wiki and Discussions are off too, so this looks deliberate rather
-than accidental. Do not try to file, read or triage issues here — `gh issue`
-will fail, and the `/issues` URL redirects to the repository home page.
-
-## How work arrives instead
-
-- **Pull requests.** A change is proposed as a PR against `main`, and the PR is
-  the unit of discussion. See [CONTRIBUTING.md](../../CONTRIBUTING.md).
-- **Security reports.** Private vulnerability reporting is enabled, so the
-  "Report a vulnerability" button under the repository's Security tab is a
-  working channel. That is the only private channel this repo has; there is
-  deliberately no `SECURITY.md`.
-- **Dependency updates.** Dependabot opens PRs directly.
-
-If you are an agent that was told to "file an issue", you cannot. Say so rather
-than working around it.
+Projects, the wiki and Discussions remain **off**. Do not point anything at
+them.
 
 > **Note on the path of this file.** `docs/` in this repository is the Astro
 > Starlight site, not a general documentation directory. This file lives at
@@ -34,11 +23,7 @@ than working around it.
 > so nothing under `docs/agents/` is published — verified by building and
 > confirming `docs/dist` contains nothing matching "agents".
 
-## Labels
-
-Labels exist on this repository and are shared between issues and pull
-requests. With issues disabled, **they can only ever be applied to pull
-requests.**
+## Triage labels
 
 The triage set is these four, all `#e6e6fa`:
 
@@ -50,18 +35,31 @@ ready-for-agent   Fully specified, ready for an autonomous agent
 ready-for-human   Requires human implementation
 ```
 
-- `needs-triage` — newly opened, nobody has looked yet.
-- `needs-info` — blocked on the author.
+The intended flow:
+
+- `needs-triage` — newly filed, nobody has looked yet. Every new issue starts
+  here.
+- `needs-info` — blocked on the reporter. Comes off once they answer.
 - `ready-for-agent` — specified well enough that an autonomous agent can
-  implement it without further questions.
+  implement it without further questions. This is the label to aim for.
 - `ready-for-human` — needs human judgement, access or taste.
 
-These four were created during the 2026-08-11 setup run. Their descriptions on
-the remote say "issue" because that is the fleet-wide wording, not because
-issues work here.
+An issue should carry exactly one of these at a time. Labels are shared between
+issues and pull requests, so they can be applied to PRs too.
+
+## Other labels
 
 GitHub's defaults (`bug`, `documentation`, `enhancement`, `wontfix`,
-`duplicate`, `good first issue`, `help wanted`, `invalid`, `question`) also
-exist but are **not** part of the triage set. Dependabot additionally maintains
-`dependencies`, `github_actions` and `javascript` and applies them to its own
-pull requests.
+`duplicate`, `good first issue`, `help wanted`, `invalid`, `question`) exist and
+are useful for categorising, but are **not** part of the triage set above —
+including `wontfix`, which records a decision rather than a triage state.
+
+Dependabot additionally maintains `dependencies`, `github_actions` and
+`javascript`, and applies them to its own pull requests.
+
+## Not through issues
+
+Security problems do not belong in a public issue. Private vulnerability
+reporting is enabled, so the "Report a vulnerability" button under the
+repository's Security tab is the channel. There is deliberately no
+`SECURITY.md`.
