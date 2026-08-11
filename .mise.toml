@@ -102,8 +102,12 @@ status=$?; pkill -f "astro preview" || true; exit $status
 # `lychee` is skipped: it is a network check over a page full of external
 # project links, so it flakes on rate limits and TLS handshakes. It lives
 # in `mise run links` instead of the gate.
+#
+# This runs the nine `pre-commit`-staged hooks only. commitlint is
+# `commit-msg`-staged and never runs here, so CI still cannot catch a bad
+# commit message the way an installed hook does.
 [tasks.lint]
-description = "prek hooks (mdformat, markdownlint, gitleaks) + actionlint"
+description = "prek pre-commit hooks (format, lint, secrets) + actionlint"
 run = ["prek run --all-files --skip lychee", "actionlint"]
 
 [tasks.links]

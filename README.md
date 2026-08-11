@@ -19,8 +19,10 @@ mise run ci             # the full gate: install, lint, check, build
 
 `mise tasks` lists them all. The ones worth knowing beyond the above:
 
-- `mise run lint` - prek hooks (mdformat, markdownlint, gitleaks) plus
-  `actionlint` over the workflows.
+- `mise run lint` - the nine `pre-commit`-staged prek hooks (whitespace, YAML,
+  TOML, large files, merge conflicts, mdformat, markdownlint, gitleaks) plus
+  `actionlint` over the workflows. Not commitlint, which is
+  `commit-msg`-staged.
 - `mise run audit` - [zizmor](https://docs.zizmor.sh/) audit of the workflows
   and the dependabot config. Needs an authenticated `gh`.
 - `mise run links` - `lychee` broken-link check. Kept out of `ci` because it is
