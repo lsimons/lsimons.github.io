@@ -70,9 +70,12 @@ their own).
   The Pages source must be "GitHub Actions" (not "Deploy from a branch").
   **Deployment is load-bearing: do not break this workflow.**
 - Dependabot is active (bun + actions, weekly, 7-day cooldown); typescript is
-  held to 6.x - keep the ignore rule. This is not a blanket semver-major guard:
+  held to 6.x - keep the ignore rule. It *is* a `version-update:semver-major`
+  ignore, but scoped to `typescript` alone and for a checked reason:
   `@astrojs/check` declares `peerDependencies.typescript = "^5.0.0 || ^6.0.0"`,
-  so TypeScript 7 would break the `docs-check` task.
+  so TypeScript 7 would break the `docs-check` task. Do not generalise it to
+  other dependencies - majors are otherwise allowed to flow, with green CI as
+  the acceptance signal.
 - Verify changes with `mise run ci`. To eyeball the layout, run
   `mise run docs-browser` once (installs Playwright's Chromium), then
   `mise run docs-screenshot out.png` builds, serves, and captures the landing
