@@ -35,8 +35,10 @@ jobs:
           key: ${{ runner.os }}-bun-${{ hashFiles('docs/bun.lock') }}
           restore-keys: ${{ runner.os }}-bun-
 
+      # Frozen: the published site must be built from the committed
+      # lockfile, never from whatever bun resolves as newest on the runner.
       - name: Install
-        run: mise run docs-install
+        run: mise run docs-install-frozen
 
       - name: Build
         run: mise run docs-build
