@@ -1,2 +1,9 @@
+# Build, cache and editor output. The Astro site has its own .gitignore in
+# docs/ covering dist/, .astro/ and node_modules/.
+
+# `.claude/` itself is tracked on purpose — settings.json is shared config.
+# Only the per-user overrides and agent worktrees are ignored.
 .claude/settings.local.json
+.claude/worktrees
+
 .DS_Store
