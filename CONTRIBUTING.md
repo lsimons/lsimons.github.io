@@ -11,8 +11,12 @@ are all very welcome.
 Please follow our [Code of Conduct](CODE_OF_CONDUCT.md) to keep our community
 approachable and respectable.
 
-Do not report a security problem in a public issue. Use the "Report a
-vulnerability" button under the repository's Security tab instead.
+This repository has GitHub Issues disabled, so there is nowhere to file a bug
+report. Contributions arrive as pull requests against `main`.
+
+Report a security problem privately, using the "Report a vulnerability" button
+under the repository's Security tab. Please do not describe it in a pull
+request.
 
 You could read the [open source contribution
 guide](https://opensource.guide/how-to-contribute/) for general advice on how
@@ -71,8 +75,10 @@ Install them once per clone:
 prek install -t pre-commit -t commit-msg
 ```
 
-`mise run lint` runs the same hooks over every file, so CI catches what an
-uninstalled hook would have missed.
+`mise run lint` runs the nine `pre-commit`-staged hooks over every file, so CI
+catches what an uninstalled hook would have missed. It does **not** run
+commitlint, which is `commit-msg`-staged — so if you skip `prek install`,
+nothing checks your commit message before review.
 
 Since this is a small hobby project, your contribution may not be noticed for
 a while if we are busy elsewhere. Sorry!
