@@ -54,18 +54,23 @@ their own).
 
 - Git hooks via prek (`prek install -t pre-commit -t commit-msg` once per
   clone): mdformat, markdownlint, lychee (link check), gitleaks, commitlint.
-  `mise run lint` runs the same hooks over every file (skipping the networked
-  lychee hook) plus `actionlint`, so CI catches what an uninstalled hook would
-  have missed.
+  `mise run lint` runs the nine `pre-commit`-staged hooks over every file
+  (skipping the networked lychee hook) plus `actionlint`, so CI catches what an
+  uninstalled hook would have missed. **commitlint is not among them**: it is
+  `commit-msg`-staged, so an uninstalled commit-msg hook is still not caught by
+  CI.
 - **Conventional commits are enforced** (`docs:`, `fix:`, `ci:`, `build:`,
   `feat:` ...). Also add `Assisted-by: <Agent>:<model>` trailer per user
   convention.
 - **`mise run ci` is the gate**: install (frozen lockfile), lint, Astro check,
   build. Run it before pushing. `.github/workflows/ci.yml` runs the same four
   steps in the same order - keep the two lists in sync.
-- `mise run audit` mirrors the workflow's zizmor job locally. It needs an
-  authenticated `gh` and refuses to run without one, rather than silently
-  falling back to a weaker offline audit.
+- `mise run audit` runs the same zizmor audit as the workflow's zizmor job, at
+  the same pinned version, but **deliberately one notch stricter**: it adds
+  `--strict-collection`, which fails rather than warns on syntax and schema
+  errors in collected inputs. The action does not set it. Local ≥ CI is the
+  safe direction. It also needs an authenticated `gh` and refuses to run
+  without one, rather than silently falling back to a weaker offline audit.
 - Deploy (`deploy.yml`) publishes `docs/dist` to GitHub Pages on push to main.
   The Pages source must be "GitHub Actions" (not "Deploy from a branch").
   **Deployment is load-bearing: do not break this workflow.**
@@ -91,9 +96,17 @@ Use GitHub, with the `gh` CLI.
 
 ### Issue tracker
 
-Use GitHub issues. See [docs/agents/issue-tracker.md](docs/agents/issue-tracker.md).
+**None — this repository has GitHub Issues disabled** (`has_issues: false`; so
+are Projects, the wiki and Discussions). `gh issue` fails here. Work arrives as
+pull requests against `main`, and security reports through the Security tab's
+"Report a vulnerability" button. If you are asked to file an issue, say that
+you cannot rather than working around it. See
+[docs/agents/issue-tracker.md](docs/agents/issue-tracker.md).
 
 ### Triage labels
 
-Use needs-triage, needs-info, ready-for-agent, ready-for-human, wontfix. See
+needs-triage, needs-info, ready-for-agent, ready-for-human (all `#e6e6fa`).
+Labels are shared between issues and PRs, so with issues off they can only be
+applied to pull requests. `wontfix` and the other GitHub defaults exist but are
+not part of the triage set. See
 [docs/agents/issue-tracker.md](docs/agents/issue-tracker.md).
