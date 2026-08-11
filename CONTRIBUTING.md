@@ -11,12 +11,12 @@ are all very welcome.
 Please follow our [Code of Conduct](CODE_OF_CONDUCT.md) to keep our community
 approachable and respectable.
 
-This repository has GitHub Issues disabled, so there is nowhere to file a bug
-report. Contributions arrive as pull requests against `main`.
+Bug reports and feature requests go in [GitHub
+issues](https://github.com/lsimons/lsimons.github.io/issues). Code changes
+arrive as pull requests against `main`.
 
-Report a security problem privately, using the "Report a vulnerability" button
-under the repository's Security tab. Please do not describe it in a pull
-request.
+Do not report a security problem in a public issue. Use the "Report a
+vulnerability" button under the repository's Security tab instead.
 
 You could read the [open source contribution
 guide](https://opensource.guide/how-to-contribute/) for general advice on how

@@ -96,17 +96,15 @@ Use GitHub, with the `gh` CLI.
 
 ### Issue tracker
 
-**None — this repository has GitHub Issues disabled** (`has_issues: false`; so
-are Projects, the wiki and Discussions). `gh issue` fails here. Work arrives as
-pull requests against `main`, and security reports through the Security tab's
-"Report a vulnerability" button. If you are asked to file an issue, say that
-you cannot rather than working around it. See
+Use GitHub issues, with the `gh` CLI. Enabled on 2026-08-11 — it was off before
+that, so `has_issues` is worth a glance if `gh issue` ever misbehaves. Projects,
+the wiki and Discussions are deliberately **off**. Security problems go through
+the Security tab's "Report a vulnerability" button, not an issue. See
 [docs/agents/issue-tracker.md](docs/agents/issue-tracker.md).
 
 ### Triage labels
 
-needs-triage, needs-info, ready-for-agent, ready-for-human (all `#e6e6fa`).
-Labels are shared between issues and PRs, so with issues off they can only be
-applied to pull requests. `wontfix` and the other GitHub defaults exist but are
-not part of the triage set. See
+needs-triage, needs-info, ready-for-agent, ready-for-human (all `#e6e6fa`), one
+at a time per issue. `wontfix` and the other GitHub defaults exist but are not
+part of the triage set. Labels are shared between issues and PRs. See
 [docs/agents/issue-tracker.md](docs/agents/issue-tracker.md).
