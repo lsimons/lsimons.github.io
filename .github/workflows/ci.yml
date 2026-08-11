@@ -90,7 +90,12 @@ jobs:
           version: "1.29.0"
           # `collect` is deliberately unset. The action's default already
           # covers workflows, composite actions and .github/dependabot.yml
-          # while honouring .gitignore. Do not set `collect: all` — that
-          # means "and stop honouring .gitignore", which sweeps in every
-          # vendored workflow under docs/node_modules and reports dozens of
-          # findings about other people's repos.
+          # while honouring .gitignore, and naming kinds explicitly would be
+          # strictly narrower than that default. Do not set `collect: all`:
+          # it means "and stop honouring .gitignore", so it audits whatever
+          # ignored or vendored tree happens to be on disk. This job only
+          # checks out and never installs, so there is nothing vendored here
+          # today — that is a property of these three steps, not a guarantee.
+          # The same flag is unset in .mise.toml for the concrete version of
+          # the same reason: there, after `docs-install`, docs/node_modules
+          # really does exist.
