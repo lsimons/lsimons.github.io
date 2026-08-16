@@ -3,6 +3,10 @@
 # `mise install` installs everything under [tools]; `mise run <task>` runs
 # the tasks below. `mise run ci` is the full gate.
 
+[settings]
+minimum_release_age = "7d"
+lockfile = true
+
 # Every tool is pinned to an exact version, deliberately and without
 # exception. This is a supply-chain rule, not a stability one: an upstream
 # compromise must never be auto-downloaded. A blanket "pin everything,
@@ -16,7 +20,7 @@
 bun = "1.3.14"
 gitleaks = "8.30.1"
 lychee = "0.24.2"
-prek = "0.4.11"
+prek = "0.4.12"
 # Used by `mise run audit`; must match `version:` in the workflow's zizmor
 # job. Bump them together — the action validates `version:` against a list
 # baked into its own release, so a tool bump can also need an action bump.
