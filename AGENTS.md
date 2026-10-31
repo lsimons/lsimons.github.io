@@ -34,8 +34,8 @@ their own).
   invocation was never recorded; there is no task for it. This used to say
   "(see README)", but the README has never described it.
 - `.mise.toml` - every tool pinned to an exact version (bun, prek, lychee,
-  gitleaks, zizmor, actionlint, shellcheck), plus the tasks below. Run
-  `mise install` first. See `mise tasks` for the full list.
+  gitleaks, zizmor, actionlint, shellcheck, osv-scanner), plus the tasks below.
+  Run `mise install` first. See `mise tasks` for the full list.
   `mise run docs-repos` re-scans GitHub (needs authenticated `gh`) and rewrites
   `docs/src/data/repos.json` only - public, non-fork, non-archived repos, minus
   an exclude list. It does not touch `intro.md`.
