@@ -25,6 +25,9 @@ mise run ci             # the full gate: install, lint, check, build
   `commit-msg`-staged.
 - `mise run audit` - [zizmor](https://docs.zizmor.sh/) audit of the workflows
   and the dependabot config. Needs an authenticated `gh`.
+- `mise run vuln` - [osv-scanner](https://google.github.io/osv-scanner/) scan
+  of `docs/bun.lock` against the OSV database. Network, so not part of `ci`;
+  CI runs it as its own job.
 - `mise run links` - `lychee` broken-link check. Kept out of `ci` because it is
   a network check that flakes on rate limits.
 - `mise run docs-repos` - regenerate `docs/src/data/repos.json` from GitHub.
