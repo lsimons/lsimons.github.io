@@ -24,7 +24,7 @@ mise run ci             # the full gate: install, lint, check, build
   `actionlint` over the workflows. Not commitlint, which is
   `commit-msg`-staged.
 - `mise run audit` - [zizmor](https://docs.zizmor.sh/) audit of the workflows
-  and the dependabot config. Needs an authenticated `gh`.
+  and actions. Needs an authenticated `gh`.
 - `mise run vuln` - [osv-scanner](https://google.github.io/osv-scanner/) scan
   of `docs/bun.lock` against the OSV database. Network, so not part of `ci`;
   CI runs it as its own job.
@@ -49,6 +49,8 @@ The Pages source must be set to "GitHub Actions" in the repository settings.
   `docs/src/content/docs/index.mdx`.
 - `docs/agents/` - notes for AI coding agents; not part of the built site.
 - `.mise.toml` - pinned tools and dev/build tasks (run with `mise run <task>`).
+- `renovate.json` - dependency updates through Renovate, via the shared
+  lsimons/.github preset.
 - `.github/workflows/` - `ci.yml` (lint, check and build, plus a zizmor audit,
   on PRs and pushes to main) and `deploy.yml` (publish on push to main).
 

@@ -43,7 +43,7 @@ Tools are pinned in `.mise.toml`; run `mise install` once. Then:
 - `mise run ci` - The full gate: install, lint, check, build. Must pass
   before you push.
 - `mise run audit` - Run [zizmor](https://docs.zizmor.sh/) over the workflows
-  and the dependabot config. Needs an authenticated `gh`; not part of `ci`.
+  and actions. Needs an authenticated `gh`; not part of `ci`.
 - `mise run links` - `lychee` broken-link check. Not part of `ci`, because it
   is a network check over a page full of external project links and flakes on
   rate limits.

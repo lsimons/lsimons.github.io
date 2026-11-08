@@ -109,10 +109,12 @@ jobs:
           # This pin is why the action is on v0.6.2 and not v0.6.1: the
           # action validates `version:` against a list baked into its own
           # release, and v0.6.1 fails with "Unknown version: 1.29.0" before
-          # zizmor ever runs. The two must be bumped together.
+          # zizmor ever runs. The two must be bumped together. Renovate
+          # bumps this input and the mise `zizmor` pin with the same 7-day
+          # wait, so they land in the same PR.
           version: "1.31.1"
           # `collect` is deliberately unset. The action's default already
-          # covers workflows, composite actions and .github/dependabot.yml
+          # covers workflows, composite actions and any dependabot config
           # while honouring .gitignore, and naming kinds explicitly would be
           # strictly narrower than that default. Do not set `collect: all`:
           # it means "and stop honouring .gitignore", so it audits whatever

@@ -54,8 +54,9 @@ GitHub's defaults (`bug`, `documentation`, `enhancement`, `wontfix`,
 are useful for categorising, but are **not** part of the triage set above —
 including `wontfix`, which records a decision rather than a triage state.
 
-Dependabot additionally maintains `dependencies`, `github_actions` and
-`javascript`, and applies them to its own pull requests.
+Renovate applies `dependencies` to its own pull requests. The
+`github_actions` and `javascript` labels are left over from Dependabot and
+are no longer applied.
 
 ## Not through issues
 

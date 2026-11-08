@@ -14,16 +14,20 @@ lockfile = true
 # per-dependency judgement about which upstreams are trustworthy enough to
 # float.
 #
-# The cost is that nothing here is covered by dependabot, so these go stale
-# silently. Refresh them deliberately with `mise up`, and read the diff.
+# Renovate's `mise` manager keeps these pins and mise.lock current, after
+# its 7-day minimumReleaseAge and through the same CI gate as every other
+# dependency. `mise up` still works for a deliberate out-of-band bump; read
+# the diff.
 [tools]
 bun = "1.4.4"
 gitleaks = "8.30.1"
 lychee = "0.24.2"
 prek = "0.5.9"
 # Used by `mise run audit`; must match `version:` in the workflow's zizmor
-# job. Bump them together — the action validates `version:` against a list
-# baked into its own release, so a tool bump can also need an action bump.
+# job. Renovate bumps both with the same 7-day wait, so they land in the
+# same PR. The action validates `version:`
+# against a list baked into its own release, so a zizmor bump can also need
+# an action bump; if Renovate's PR fails on "Unknown version", that is why.
 zizmor = "1.31.1"
 # Used by `mise run lint`. actionlint shells out to shellcheck for the
 # `run:` blocks in workflows, and silently skips that half if shellcheck is
@@ -48,8 +52,9 @@ shellcheck = "0.11.0"
 # provenance verification failed": re-check goreleaser.yml at the new
 # release tag and update the identity here, rather than dropping it.
 #
-# `auto git-mise-upgrade` may not bump inline-table pins like this one yet
-# (a separate lsimons-auto change is in progress), so bump it by hand.
+# Renovate bumps `version` in this inline table like any other pin. It
+# does not know about the signer identity: if its PR fails at `mise lock`,
+# update the identity as described above.
 osv-scanner = { version = "2.7.0", slsa_signer_identity = "https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@refs/tags/v2.1.0", slsa_signer_issuer = "https://token.actions.githubusercontent.com" }
 
 # Deliberately NOT --frozen-lockfile: this is the task you run while
@@ -161,14 +166,14 @@ run = [
 # weaker check than the name promises.
 #
 # There is deliberately no `--collect` here. zizmor's default already
-# collects every kind of input — workflows, composite actions, the
+# collects every kind of input — workflows, composite actions, any
 # dependabot config and any pre-commit config — while honouring .gitignore.
 # `--collect=all` is the trap: it means "collect every kind *and ignore
 # .gitignore*", so after `mise run docs-install` it sweeps in every
 # vendored workflow under docs/node_modules and reports dozens of findings
 # about other people's repositories.
 [tasks.audit]
-description = "zizmor audit of workflows, actions and the dependabot config"
+description = "zizmor audit of workflows and actions"
 run = """
 set -e
 GH_TOKEN=$(gh auth token 2>/dev/null) || true
