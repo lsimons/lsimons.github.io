@@ -22,13 +22,13 @@ lockfile = true
 bun = "1.4.4"
 gitleaks = "8.30.1"
 lychee = "0.24.2"
-prek = "0.5.9"
+prek = "0.5.10"
 # Used by `mise run audit`; must match `version:` in the workflow's zizmor
 # job. Renovate bumps both with the same 7-day wait, so they land in the
 # same PR. The action validates `version:`
 # against a list baked into its own release, so a zizmor bump can also need
 # an action bump; if Renovate's PR fails on "Unknown version", that is why.
-zizmor = "1.31.1"
+zizmor = "1.32.0"
 # Used by `mise run lint`. actionlint shells out to shellcheck for the
 # `run:` blocks in workflows, and silently skips that half if shellcheck is
 # missing, so shellcheck is pinned here too rather than left to the host.
@@ -55,7 +55,7 @@ shellcheck = "0.11.0"
 # Renovate bumps `version` in this inline table like any other pin. It
 # does not know about the signer identity: if its PR fails at `mise lock`,
 # update the identity as described above.
-osv-scanner = { version = "2.7.0", slsa_signer_identity = "https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@refs/tags/v2.1.0", slsa_signer_issuer = "https://token.actions.githubusercontent.com" }
+osv-scanner = { version = "2.7.1", slsa_signer_identity = "https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@refs/tags/v2.1.0", slsa_signer_issuer = "https://token.actions.githubusercontent.com" }
 
 # Deliberately NOT --frozen-lockfile: this is the task you run while
 # actually changing dependencies, and it is allowed to update bun.lock.
