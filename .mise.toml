@@ -22,7 +22,7 @@ lockfile = true
 bun = "1.4.4"
 gitleaks = "8.30.1"
 lychee = "0.24.2"
-prek = "0.5.10"
+prek = "0.5.11"
 # Used by `mise run audit`; must match `version:` in the workflow's zizmor
 # job. Renovate bumps both with the same 7-day wait, so they land in the
 # same PR. The action validates `version:`
