@@ -10,13 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "0.42.10",
-    "astro": "7.4.7",
+    "@astrojs/starlight": "0.43.1",
+    "astro": "7.4.12",
     "sharp": "0.35.5"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
-    "playwright": "1.65.0",
+    "playwright": "1.65.1",
     "typescript": "6.0.3"
   }
 }
